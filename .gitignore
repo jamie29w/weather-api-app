@@ -17,7 +17,7 @@
 .env.production.local
 
 # secret
-./src/api-key.js
+./src/secret
 
 npm-debug.log*
 yarn-debug.log*
