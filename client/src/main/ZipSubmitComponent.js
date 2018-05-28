@@ -4,7 +4,7 @@ function ZipSubmitComponent(props) {
     return (
         <div>
             <input id='zipInput' placeholder='zip'/>
-            <button onClick={() => props.zipSubmit(document.getElementById('zipInput').value)}>Check Your Local Weather</button>
+            <button onClick={() => props.searchWeather(document.getElementById('zipInput').value)}>Check Your Local Weather</button>
         </div>
     )
 }
