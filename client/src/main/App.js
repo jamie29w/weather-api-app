@@ -9,51 +9,59 @@ class App extends Component {
         this.state = {
             lat: null,
             lng: null,
-        }
-        this.zipSubmit = this.zipSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
-    
 
-    // componentDidMount() {
-    //     axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCZNng4wnr3pcGCRRotJxDGMDVxYLqh9I8`).then(res => {
-    //         console.log(res)
-    //     })
-    // }
+        }
+        this.getCoords = this.getCoords.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.getWeatherInfo = this.getWeatherInfo.bind(this);
+        this.searchWeather = this.searchWeather.bind(this);
+    }
+
 
     handleChange(lat,lng) {
         this.setState(prevState => {
-            if (true) {
+            if (typeof lat === 'number' && typeof lng === 'number') {
                 return {
                     lat: lat,
-                    lng: lng
+                    lng: lng,
                 }
             } else {
                 return prevState;
             }
         })
         console.log(this.state)
-        console.log(typeof this.state.lat)
     }
 
-    zipSubmit(zip) {
-        axios.post(`https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=AIzaSyCZNng4wnr3pcGCRRotJxDGMDVxYLqh9I8
+    getWeatherInfo(lat, lng) {
+        console.log(lat, lng)
+        // axios.get(`https://api.darksky.net/forecast/bfa28e52ee65f422c4e13920d62b028b/${lat},${lng}`).then(response => {
+        //     console.log(response)
+        // })
+    }
+
+    getCoords(loc) {
+        axios.post(`https://maps.googleapis.com/maps/api/geocode/json?address=${loc}&key=AIzaSyCZNng4wnr3pcGCRRotJxDGMDVxYLqh9I8
         `).then(res => {
-            const coords = res.data.results[0].geometry.location
-            // console.log(res.data.results[0].geometry.location.lat)
-            // console.log(res.data.results[0].geometry.location.lng)
-            this.handleChange(coords.lat, coords.lng)
+            let coords = res.data.results[0].geometry.location;
+            // console.log(`coords is ${coords.lat}`)
+            this.handleChange(coords.lat, coords.lng);
         })
+    }
+
+    async searchWeather(loc){
+        await this.getCoords(loc);
+        console.log(`lat is ${this.state.lat}`);
+        //state hasn't been updated yet, so getWeatherInfo arguments are null
+        this.getWeatherInfo(this.state.lat, this.state.lng);
     }
 
 
     render() {
         return (
             <ZipSubmitComponent
-                zipSubmit = {this.zipSubmit}
+                searchWeather = {this.searchWeather}
             />
-            // <div>hi</div>
-    )
+        )
     }
     
 }
