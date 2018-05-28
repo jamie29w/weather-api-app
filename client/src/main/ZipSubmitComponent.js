@@ -1,10 +1,10 @@
 import React from 'react';
 
-function ZipSubmitComponent() {
+function ZipSubmitComponent(props) {
     return (
         <div>
-            <input id='zip' placeholder='zip'/>
-            <button id='zipSubmit'>Check Your Local Weather</button>
+            <input id='zipInput' placeholder='zip'/>
+            <button onClick={() => props.zipSubmit(document.getElementById('zipInput').value)}>Check Your Local Weather</button>
         </div>
     )
 }
