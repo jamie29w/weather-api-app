@@ -4,7 +4,7 @@ function ZipSubmitComponent() {
     return (
         <div>
             <input id='zip' placeholder='zip'/>
-            <button id='zipSubmit'>Check Local Weather</button>
+            <button id='zipSubmit'>Check Your Local Weather</button>
         </div>
     )
 }
