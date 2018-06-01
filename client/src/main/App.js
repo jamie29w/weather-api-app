@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ZipSubmitComponent from './ZipSubmitComponent'
 import axios from 'axios';
-const corsFwd = 'https://vschool-cors.herokuapp.com?url=';
+// const corsFwd = 'https://vschool-cors.herokuapp.com?url=';
 const locHost = 'http://localhost:5080'
 
 
@@ -40,7 +40,10 @@ class App extends Component {
     }
 
     getWeatherInfo(lat, lng) {
-        return axios.get(`${corsFwd}https://api.darksky.net/forecast/bfa28e52ee65f422c4e13920d62b028b/${lat},${lng}`)
+        console.log(`${locHost}/weather/:${lat}},${lng}`)
+        return axios.get(`${locHost}/weather/${lat},${lng}`)
+        //why don't I need a : before lat & lng^^
+        // return axios.get(`${corsFwd}https://api.darksky.net/forecast/bfa28e52ee65f422c4e13920d62b028b/${lat},${lng}`)
     }
 
     searchWeather(loc){
