@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ZipSubmitComponent from './ZipSubmitComponent'
 import axios from 'axios';
-// const corsFwd = 'https://vschool-cors.herokuapp.com?url=';
 const locHost = 'http://localhost:5080'
 
 

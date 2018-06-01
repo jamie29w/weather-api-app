@@ -1,8 +1,28 @@
 {
+  "name": "weather-api-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
   "dependencies": {
     "axios": "^0.18.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "morgan": "^1.9.0",
     "nodemon": "^1.17.5"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamie29w/weather-api-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamie29w/weather-api-app/issues"
+  },
+  "homepage": "https://github.com/jamie29w/weather-api-app#readme"
 }

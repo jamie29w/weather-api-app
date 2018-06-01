@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const cors = require('cors');
+const morgan = require("morgan");
 const apiKeys = require('./config.js');
 const googleApiKey = apiKeys.googleApiKey;
 const darkSkyApiKey = apiKeys.darkSkyApiKey;
 
+app.use(morgan("dev"));
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -20,6 +22,7 @@ app.get('/coords/:loc', (req, res) => {
 })
 
 app.get('/weather/:lat,:lng', (req, res) => {
+    console.log(req.params)
     axios.get(`https://api.darksky.net/forecast/${darkSkyApiKey}/${req.params.lat},${req.params.lng}`)
     .then(response => {
         res.send(response.data)
