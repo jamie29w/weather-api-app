@@ -6,8 +6,6 @@ const apiKeys = require('./config.js');
 const googleApiKey = apiKeys.googleApiKey;
 const darkSkyApiKey = apiKeys.darkSkyApiKey;
 
-
-
 app.use(cors());
 
 app.get('/', (req, res) => {
