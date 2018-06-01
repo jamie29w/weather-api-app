@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ZipSubmitComponent from './ZipSubmitComponent'
 import axios from 'axios';
 const corsFwd = 'https://vschool-cors.herokuapp.com?url=';
+const locHost = 'http://localhost:5080'
 
 
 class App extends Component {
@@ -34,7 +35,8 @@ class App extends Component {
     }
 
     getCoords(loc) {
-        return axios.post(`https://maps.googleapis.com/maps/api/geocode/json?address=${loc}&key=AIzaSyCZNng4wnr3pcGCRRotJxDGMDVxYLqh9I8`)
+        // return axios.post(`https://maps.googleapis.com/maps/api/geocode/json?address=${loc}&key=AIzaSyCZNng4wnr3pcGCRRotJxDGMDVxYLqh9I8`)
+        return axios.get(`${locHost}/coords/:${loc}`)
     }
 
     getWeatherInfo(lat, lng) {
@@ -53,7 +55,6 @@ class App extends Component {
                 console.error(err)
             })
     }
-
 
     render() {
         return (
