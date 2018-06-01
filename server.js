@@ -3,15 +3,12 @@ const app = express();
 const axios = require('axios');
 const cors = require('cors');
 const apiKeys = require('./config.js');
-console.log(apiKeys);
 const googleApiKey = apiKeys.googleApiKey;
 const darkSkyApiKey = apiKeys.darkSkyApiKey;
 
 
 
 app.use(cors());
-
-console.log(cors);
 
 app.get('/', (req, res) => {
     res.send("Hi from server");
