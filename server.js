@@ -22,7 +22,6 @@ app.get('/coords/:loc', (req, res) => {
 })
 
 app.get('/weather/:lat,:lng', (req, res) => {
-    console.log(req.params)
     axios.get(`https://api.darksky.net/forecast/${darkSkyApiKey}/${req.params.lat},${req.params.lng}`)
     .then(response => {
         res.send(response.data)
