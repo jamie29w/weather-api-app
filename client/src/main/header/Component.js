@@ -12,17 +12,14 @@ function HeaderComponent(props) {
             flexDirection: "column",
             alignContent: "center"
         },
-        input: {
-            
+        input: {            
             height: "25px",
-            width: "200px"
-        
-            
+            width: "200px",
         },
         button: {
             // flexDirection: "row",
             height: "25px",
-            width: "200px"
+            width: "200px",
         }
     }
 
