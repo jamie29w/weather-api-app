@@ -15,11 +15,14 @@ function HeaderComponent(props) {
         input: {            
             height: "25px",
             width: "200px",
+            marginLeft: "auto",
+            marginRight: "auto"
         },
         button: {
-            // flexDirection: "row",
             height: "25px",
             width: "200px",
+            marginLeft: "auto",
+            marginRight: "auto"
         }
     }
 
