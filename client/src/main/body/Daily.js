@@ -22,6 +22,7 @@ function Daily (props) {
 
     return (
         <div style={styles.outerDivStyles}>
+            <h2>Tomorrow...</h2>
             <div style={styles.innerDivStyles}>
                 <h3>Hi: {props.day.temperatureHigh}</h3>
                 <h3>Lo: {props.day.temperatureLow} </h3>

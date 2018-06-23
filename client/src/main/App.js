@@ -12,6 +12,8 @@ class App extends Component {
         this.state = {
             lat: null,
             lng: null,
+            day: "",
+            location: "",
             weather: {
                 currently: {},
                 daily: {
@@ -49,6 +51,15 @@ class App extends Component {
         })
     }
 
+    handleLocationChange(location) {
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                location
+            }
+        })
+    }
+
     handleWeatherChange(data) {
         this.setState(prevState => {
             return {
@@ -74,6 +85,7 @@ class App extends Component {
                 return this.getWeatherInfo(coords.lat, coords.lng)
             }).then (res => {
                 this.handleWeatherChange(res.data)
+                this.handleLocationChange(loc)
             }).catch(err => {
                 console.error(err)
             })
@@ -83,7 +95,7 @@ class App extends Component {
         return(
             <div>
                 <HeaderComponent searchWeather = {this.searchWeather} />
-                <BodyComponent weather={this.state.weather} />
+                <BodyComponent location={this.state.location} weather={this.state.weather} />
             </div>
         )
     }
