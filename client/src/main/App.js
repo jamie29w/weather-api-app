@@ -49,6 +49,8 @@ class App extends Component {
                 return prevState;
             }
         })
+        document.getElementById('zipInput').value = ""
+        
     }
 
     handleLocationChange(location) {
