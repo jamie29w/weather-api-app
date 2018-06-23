@@ -4,13 +4,21 @@ import BodyContainer from "./body/Container";
 const locHost = 'http://localhost:5080'
 
 
-function App () {
-    return(
-        <div>
-            <HeaderContainer />
-            <BodyContainer />
-        </div>
-    )
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            
+        }
+    }
+    render() {
+        return(
+            <div>
+                <HeaderContainer />
+                <BodyContainer />
+            </div>
+        )
+    }
 }
 
 export default App;
