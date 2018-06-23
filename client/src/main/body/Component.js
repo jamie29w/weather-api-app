@@ -9,14 +9,18 @@ function BodyComponent (props) {
             width: "100%",
             fontFamily: "platelet",
             fontSize: "2em",
-            margin: "5vh",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "5vh",
+            marginBottom: "5vh",
             display: "flex",
             flexDirection: "column",
             textAlign: 'center'
         },
         headers: {
             textAlign: "center",
-            margin: "5vh",
+            marginLeft: "5vh",
+            marginRight: "5vh",
         }
     }
     return (
