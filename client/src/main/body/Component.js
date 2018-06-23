@@ -6,10 +6,11 @@ function BodyComponent () {
             width: "100%",
             fontFamily: "platelet",
             fontSize: "2em",
-            margin: "5vh"
+            margin: "5vh",
         },
         headers: {
-            textAlign: "center"
+            textAlign: "center",
+            margin: "5vh",
         }
     }
     return (

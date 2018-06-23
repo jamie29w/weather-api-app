@@ -20,7 +20,8 @@ function HeaderComponent(props) {
             fontSize: "1em",
             padding: "5px",
             marginTop: "5vh",
-            marginBottom: "0vh"
+            marginBottom: "0vh",
+            textAlign: "center"
         },
         button: {
             height: "30px",
