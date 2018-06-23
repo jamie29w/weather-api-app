@@ -5,7 +5,7 @@ const locHost = 'http://localhost:5080'
 
 
 class HeaderContainer extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             lat: null,
@@ -17,7 +17,6 @@ class HeaderContainer extends Component {
         this.getWeatherInfo = this.getWeatherInfo.bind(this);
         this.searchWeather = this.searchWeather.bind(this);
     }
-
 
     handleChange(lat,lng) {
         this.setState(prevState => {
@@ -58,7 +57,7 @@ class HeaderContainer extends Component {
         return (
             // <div>hi</div>
             <HeaderComponent
-                searchWeather = {this.searchWeather}
+                searchWeather = {this.props.searchWeather}
             />
         )
     }
