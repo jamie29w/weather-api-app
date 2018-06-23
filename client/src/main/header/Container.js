@@ -5,7 +5,7 @@ const locHost = 'http://localhost:5080'
 
 
 class HeaderContainer extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             lat: null,
@@ -58,7 +58,7 @@ class HeaderContainer extends Component {
         return (
             // <div>hi</div>
             <HeaderComponent
-                searchWeather = {this.searchWeather}
+                searchWeather = {this.props.searchWeather}
             />
         )
     }
