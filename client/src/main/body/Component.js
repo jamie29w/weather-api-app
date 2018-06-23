@@ -24,13 +24,9 @@ function BodyComponent (props) {
             <h1 style={styles.headers}>{props.weather.currently.temperature === undefined ? "ENTER YOUR LOCATION ABOVE" : `CURRENT WEATHER IN...`}</h1>
             <h3 style={styles.headers}>{props.weather.currently.temperature === undefined ? "" : `${props.weather.currently.temperature}˚`}</h3>
 
-            <h1>WEEKLY FORECAST:</h1>
+            <h1> {props.weather.currently.temperature === undefined ? "" : "WEEKLY FORECAST:"}</h1>
             <br/>
             {props.weather.currently.temperature === undefined ? "" : props.weather.daily.data.map((day, i) => <Daily key={i} day={props.weather.daily.data[i]} />)}
-            {/* <h1 style={styles.headers}>TOMORROW:</h1>
-            <h3 style={styles.headers}>{props.weather.daily.data[1].temperatureHigh}˚</h3>
-            <h1 style={styles.headers}>DAY AFTER TOMORROW:</h1>
-            <h3 style={styles.headers}>{props.weather.daily.data[2].temperatureHigh}˚</h3> */}
         </div>
     )
 }
