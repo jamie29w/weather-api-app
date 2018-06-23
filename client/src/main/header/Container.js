@@ -18,7 +18,6 @@ class HeaderContainer extends Component {
         this.searchWeather = this.searchWeather.bind(this);
     }
 
-
     handleChange(lat,lng) {
         this.setState(prevState => {
             if (typeof lat === 'number' && typeof lng === 'number') {

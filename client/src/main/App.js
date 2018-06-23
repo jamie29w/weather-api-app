@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import HeaderContainer from './header/Container';
+// import HeaderContainer from './header/Container';
 import HeaderComponent from './header/Component';
 import axios from 'axios';
-import BodyContainer from "./body/Container";
+import BodyComponent from "./body/Component";
 const locHost = 'http://localhost:5080'
 
 
@@ -12,11 +12,28 @@ class App extends Component {
         this.state = {
             lat: null,
             lng: null,
+            weather: {
+                currently: {},
+                daily: {
+                    data: [
+                        {},
+                        {},
+                        {},
+                        {},
+                        {},
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                hourly: {}
+            }
         }
-        this.getCoords = this.getCoords.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.getWeatherInfo = this.getWeatherInfo.bind(this);
-        this.searchWeather = this.searchWeather.bind(this);
+        this.getCoords = this.getCoords.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.getWeatherInfo = this.getWeatherInfo.bind(this)
+        this.searchWeather = this.searchWeather.bind(this)
+        this.handleWeatherChange = this.handleWeatherChange.bind(this)
     }
 
     handleChange(lat,lng) {
@@ -30,8 +47,16 @@ class App extends Component {
                 return prevState;
             }
         })
-        console.log(this.state)
     }
+
+    handleWeatherChange(data) {
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                weather: data
+            }
+        })
+    } 
 
     getCoords(loc) {
         return axios.get(`${locHost}/coords/${loc}`)
@@ -48,7 +73,7 @@ class App extends Component {
                 this.handleChange(coords.lat, coords.lng)
                 return this.getWeatherInfo(coords.lat, coords.lng)
             }).then (res => {
-                console.log(res.data)
+                this.handleWeatherChange(res.data)
             }).catch(err => {
                 console.error(err)
             })
@@ -58,7 +83,7 @@ class App extends Component {
         return(
             <div>
                 <HeaderComponent searchWeather = {this.searchWeather} />
-                <BodyContainer />
+                <BodyComponent weather={this.state.weather} />
             </div>
         )
     }
