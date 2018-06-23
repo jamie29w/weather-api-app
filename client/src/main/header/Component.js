@@ -10,26 +10,35 @@ function HeaderComponent(props) {
             display: "flex",
             justifyContent: "space-around",
             flexDirection: "column",
-            alignContent: "center"
+            alignContent: "center",
         },
-        input: {
-            
-            height: "25px",
-            width: "200px"
-        
-            
+        input: {            
+            height: "30px",
+            width: "150px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            fontSize: "1em",
+            padding: "5px",
+            marginTop: "5vh",
+            marginBottom: "0vh",
+            textAlign: "center"
         },
         button: {
-            // flexDirection: "row",
-            height: "25px",
-            width: "200px"
+            height: "30px",
+            width: "150px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            fontSize: "1em",
+            padding: "5px",
+            marginTop: "5vh",
+            marginBottom: "5vh"
         }
     }
 
     return (
         <div style={style.background}>
             <input style={style.input} id='zipInput' placeholder='zip'/>
-            <button style={style.button} onClick={() => props.searchWeather(document.getElementById('zipInput').value)}>Check Your Local Weather</button>
+            <button style={style.button} onClick={() => props.searchWeather(document.getElementById('zipInput').value)}>Your Weather</button>
         </div>
     )
 }
