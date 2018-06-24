@@ -4,7 +4,7 @@ function HeaderComponent(props) {
 
     const style = {
         background: {
-            backgroundColor: "lightgrey",
+            backgroundColor: "#9FE3DD",
             width: "100%",
             height: "20vh",
             display: "flex",

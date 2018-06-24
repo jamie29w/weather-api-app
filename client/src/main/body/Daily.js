@@ -9,13 +9,20 @@ function Daily (props) {
             display: "flex",
             flexDirection: "column",
             textAlign: "center",
-            // margin: "15px"
         },
         innerDivStyles: {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
-            margin: 15
+        },
+        headers: {
+            textAlign: "center",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "2.5vh"
+        },
+        spans: {
+            color: "#004843",
         }
     }
 
@@ -28,12 +35,12 @@ function Daily (props) {
 
     return (
         <div style={styles.outerDivStyles}>
-            <h2>{dayOfWeek}</h2>
+            <h2 style={styles.headers}><span style={styles.spans}>{dayOfWeek}</span></h2>
             <div style={styles.innerDivStyles}>
-                <h3>Hi: {Math.round(props.day.temperatureHigh)}˚</h3>
-                <h3>Lo: {Math.round(props.day.temperatureLow)}˚</h3>
+                <h3 style={styles.headers}><span style={styles.spans}>HI:</span> {Math.round(props.day.temperatureHigh)}˚</h3>
+                <h3 style={styles.headers}><span style={styles.spans}>LO:</span> {Math.round(props.day.temperatureLow)}˚</h3>
             </div>
-            <h5>Description: {props.day.summary}</h5>
+            <h5 style={styles.headers}><span style={styles.spans}>DESCRIPTION</span>: {props.day.summary.toUpperCase()}</h5>
             <br/>
             <hr/>
         </div>

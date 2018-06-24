@@ -14,13 +14,14 @@ function BodyComponent (props) {
             marginBottom: "5vh",
             display: "flex",
             flexDirection: "column",
-            textAlign: 'center'
+            textAlign: 'center',
+            backgroundColor: "#E6F5F7",
         },
         headers: {
             textAlign: "center",
             marginLeft: "auto",
             marginRight: "auto",
-            marginBottom: "5vh"
+            marginTop: "5vh"
         }
     }
     return (
@@ -28,7 +29,7 @@ function BodyComponent (props) {
             <h1 style={styles.headers}>{props.weather.currently.temperature === undefined ? "ENTER YOUR LOCATION ABOVE" : `CURRENT TEMPERATURE IN ${props.location.toUpperCase()}`}</h1>
             <h3 style={styles.headers}>{props.weather.currently.temperature === undefined ? "" : `${Math.round(props.weather.currently.temperature)}˚`}</h3>
 
-            <h1> {props.weather.currently.temperature === undefined ? "" : "WEEKLY FORECAST:"}</h1>
+            <h1 style={styles.headers}> {props.weather.currently.temperature === undefined ? "" : "WEEKLY FORECAST:"}</h1>
             <br/>
             {props.weather.currently.temperature === undefined ? "" : props.weather.daily.data.map((day, i) => <Daily key={i} day={props.weather.daily.data[i]} />)}
         </div>
