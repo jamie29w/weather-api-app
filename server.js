@@ -22,7 +22,7 @@ app.get('/coords/:loc', (req, res) => {
 })
 
 app.get('/weather/:lat,:lng', (req, res) => {
-    axios.get(`https://api.darksky.net/forecast/${darkSkyApiKey}/${req.params.lat},${req.params.lng}`)
+    axios.get(`https://api.darksky.net/forecast/${darkSkyApiKey}/${req.params.lat},${req.params.lng}?exclude=hourly,minutely,alerts,flags`)
     .then(response => {
         res.send(response.data)
     })
