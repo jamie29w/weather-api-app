@@ -12,7 +12,7 @@ class App extends Component {
             lat: null,
             lng: null,
             date: "",
-            location: "",
+            locationStr: "",
             weather: {
                 currently: {},
                 daily: {
@@ -31,18 +31,20 @@ class App extends Component {
             }
         }
         this.getCoords = this.getCoords.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+        this.handleCoordsChange = this.handleCoordsChange.bind(this)
         this.getWeatherInfo = this.getWeatherInfo.bind(this)
         this.searchWeather = this.searchWeather.bind(this)
         this.handleWeatherChange = this.handleWeatherChange.bind(this)
     }
 
-    handleChange(lat,lng) {
+    handleCoordsChange(lat,lng, locationStr) {
         this.setState(prevState => {
             if (typeof lat === 'number' && typeof lng === 'number') {
                 return {
-                    lat: lat,
-                    lng: lng,
+                    ...prevState,
+                    lat,
+                    lng,
+                    locationStr
                 }
             } else {
                 return prevState;
@@ -52,20 +54,11 @@ class App extends Component {
         
     }
 
-    handleLocationChange(location) {
+    handleWeatherChange(weather) {
         this.setState(prevState => {
             return {
                 ...prevState,
-                location
-            }
-        })
-    }
-
-    handleWeatherChange(data) {
-        this.setState(prevState => {
-            return {
-                ...prevState,
-                weather: data
+                weather
             }
         })
     } 
@@ -78,15 +71,15 @@ class App extends Component {
         return axios.get(`${locHost}/weather/${lat},${lng}`)
     }
 
-    searchWeather(loc){
-        this.getCoords(loc)
+    searchWeather(e, locationStr){
+        e.preventDefault();
+        this.getCoords(locationStr)
             .then(res => {
                 let coords = res.data.results[0].geometry.location;
-                this.handleChange(coords.lat, coords.lng)
+                this.handleCoordsChange(coords.lat, coords.lng, locationStr)
                 return this.getWeatherInfo(coords.lat, coords.lng)
             }).then (res => {
                 this.handleWeatherChange(res.data)
-                this.handleLocationChange(loc)
             }).catch(err => {
                 console.error(err)
             })
@@ -96,7 +89,7 @@ class App extends Component {
         return(
             <div>
                 <HeaderComponent searchWeather = {this.searchWeather} />
-                <BodyComponent location={this.state.location} weather={this.state.weather} />
+                <BodyComponent locationStr={this.state.locationStr} weather={this.state.weather} />
             </div>
         )
     }

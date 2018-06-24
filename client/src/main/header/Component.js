@@ -2,7 +2,7 @@ import React from 'react';
 
 function HeaderComponent(props) {
 
-    const style = {
+    const styles = {
         background: {
             backgroundColor: "#9FE3DD",
             width: "100%",
@@ -12,27 +12,34 @@ function HeaderComponent(props) {
             flexDirection: "column",
             alignContent: "center",
         },
+        form: {
+            height: "20vh",
+            marginLeft: "auto",
+            marginRight: "auto",
+            display: "flex",
+            justifyContent: "space-around",
+            flexDirection: "column",
+        },
         input: {            
             height: "30px",
             width: "150px",
-            marginLeft: "auto",
-            marginRight: "auto",
             fontSize: "1em",
             textAlign: "center"
         },
         button: {
             height: "30px",
             width: "150px",
-            marginLeft: "auto",
-            marginRight: "auto",
             fontSize: "1em",
-        }
+            backgroundColor: "#51BFB5"
+        },
     }
 
     return (
-        <div style={style.background}>
-            <input style={style.input} id='zipInput' placeholder='zip'/>
-            <button style={style.button} onClick={() => props.searchWeather(document.getElementById('zipInput').value)}>Your Weather</button>
+        <div style={styles.background}>
+            <form style={styles.form} onSubmit={(e) => props.searchWeather(e, document.getElementById('zipInput').value)}>
+                <input style={styles.input} id='zipInput' placeholder='Location'/>
+                <button type="submit" style={styles.button} >Your Weather</button>
+            </form>
         </div>
     )
 }
