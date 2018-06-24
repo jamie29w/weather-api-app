@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import HeaderContainer from './header/Container';
 import HeaderComponent from './header/Component';
 import axios from 'axios';
 import BodyComponent from "./body/Component";
@@ -12,6 +11,8 @@ class App extends Component {
         this.state = {
             lat: null,
             lng: null,
+            date: "",
+            location: "",
             weather: {
                 currently: {},
                 daily: {
@@ -47,6 +48,17 @@ class App extends Component {
                 return prevState;
             }
         })
+        document.getElementById('zipInput').value = ""
+        
+    }
+
+    handleLocationChange(location) {
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                location
+            }
+        })
     }
 
     handleWeatherChange(data) {
@@ -74,6 +86,7 @@ class App extends Component {
                 return this.getWeatherInfo(coords.lat, coords.lng)
             }).then (res => {
                 this.handleWeatherChange(res.data)
+                this.handleLocationChange(loc)
             }).catch(err => {
                 console.error(err)
             })
@@ -83,7 +96,7 @@ class App extends Component {
         return(
             <div>
                 <HeaderComponent searchWeather = {this.searchWeather} />
-                <BodyComponent weather={this.state.weather} />
+                <BodyComponent location={this.state.location} weather={this.state.weather} />
             </div>
         )
     }
