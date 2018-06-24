@@ -1,9 +1,6 @@
 import React from "react"
 
-function Daily (props) {
-    console.log("Daily props are")
-    console.log(props)
-    
+function Daily (props) {    
     const styles = {
         outerDivStyles: {
             display: "flex",
@@ -28,10 +25,8 @@ function Daily (props) {
 
     const date = new Date(props.day.time * 1000)
     const day = date.getUTCDay()
-    console.log(`day is ${day}`)
     const week = ["SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT"]
     const dayOfWeek = week[day]
-    console.log(`dayOfWeek is ${dayOfWeek}`)
 
 
 

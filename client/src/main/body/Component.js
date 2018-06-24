@@ -2,8 +2,6 @@ import React from "react";
 import Daily from "./Daily"
 
 function BodyComponent (props) {
-    console.log("daily data props are:")
-    console.log(props.weather.daily.data)
     const styles = {
         outerDiv: {
             width: "100%",
