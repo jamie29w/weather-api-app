@@ -26,7 +26,7 @@ function BodyComponent (props) {
     }
     return (
         <div style={styles.outerDiv}>
-            <h1 style={styles.headers}>{props.weather.currently.temperature === undefined ? "ENTER YOUR LOCATION ABOVE" : `CURRENT TEMPERATURE IN ${props.location.toUpperCase()}`}</h1>
+            <h1 style={styles.headers}>{props.weather.currently.temperature === undefined ? "ENTER YOUR LOCATION ABOVE" : `CURRENT TEMPERATURE IN ${props.locationStr.toUpperCase()}`}</h1>
             <h3 style={styles.headers}>{props.weather.currently.temperature === undefined ? "" : `${Math.round(props.weather.currently.temperature)}˚`}</h3>
 
             <h1 style={styles.headers}> {props.weather.currently.temperature === undefined ? "" : "WEEKLY FORECAST:"}</h1>

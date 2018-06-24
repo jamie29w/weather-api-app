@@ -27,9 +27,11 @@ function Daily (props) {
     }
 
     const date = new Date(props.day.time * 1000)
-    const day = date.getDay()
+    const day = date.getUTCDay()
+    console.log(`day is ${day}`)
     const week = ["SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT"]
     const dayOfWeek = week[day]
+    console.log(`dayOfWeek is ${dayOfWeek}`)
 
 
 
