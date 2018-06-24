@@ -19,13 +19,19 @@ function Daily (props) {
         }
     }
 
+    const date = new Date(props.day.time * 1000)
+    const day = date.getDay()
+    const week = ["SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT"]
+    const dayOfWeek = week[day]
+
+
 
     return (
         <div style={styles.outerDivStyles}>
-            <h2>Tomorrow...</h2>
+            <h2>{dayOfWeek}</h2>
             <div style={styles.innerDivStyles}>
-                <h3>Hi: {props.day.temperatureHigh}</h3>
-                <h3>Lo: {props.day.temperatureLow} </h3>
+                <h3>Hi: {Math.round(props.day.temperatureHigh)}˚</h3>
+                <h3>Lo: {Math.round(props.day.temperatureLow)}˚</h3>
             </div>
             <h5>Description: {props.day.summary}</h5>
             <br/>

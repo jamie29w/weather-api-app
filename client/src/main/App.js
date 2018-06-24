@@ -12,7 +12,7 @@ class App extends Component {
         this.state = {
             lat: null,
             lng: null,
-            day: "",
+            date: "",
             location: "",
             weather: {
                 currently: {},
