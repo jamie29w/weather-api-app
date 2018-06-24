@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import HeaderContainer from './header/Container';
 import HeaderComponent from './header/Component';
 import axios from 'axios';
 import BodyComponent from "./body/Component";

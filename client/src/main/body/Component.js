@@ -11,7 +11,6 @@ function BodyComponent (props) {
             fontSize: "2em",
             marginLeft: "auto",
             marginRight: "auto",
-            marginTop: "5vh",
             marginBottom: "5vh",
             display: "flex",
             flexDirection: "column",
@@ -21,8 +20,7 @@ function BodyComponent (props) {
             textAlign: "center",
             marginLeft: "auto",
             marginRight: "auto",
-            marginTop: "2.5vh",
-            marginBottom: "2.5vh"
+            marginBottom: "5vh"
         }
     }
     return (

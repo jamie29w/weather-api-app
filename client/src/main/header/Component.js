@@ -6,7 +6,7 @@ function HeaderComponent(props) {
         background: {
             backgroundColor: "lightgrey",
             width: "100%",
-            height: "30vh",
+            height: "20vh",
             display: "flex",
             justifyContent: "space-around",
             flexDirection: "column",
@@ -18,9 +18,6 @@ function HeaderComponent(props) {
             marginLeft: "auto",
             marginRight: "auto",
             fontSize: "1em",
-            padding: "5px",
-            marginTop: "5vh",
-            marginBottom: "0vh",
             textAlign: "center"
         },
         button: {
@@ -29,9 +26,6 @@ function HeaderComponent(props) {
             marginLeft: "auto",
             marginRight: "auto",
             fontSize: "1em",
-            padding: "5px",
-            marginTop: "5vh",
-            marginBottom: "5vh"
         }
     }
 
