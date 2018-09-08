@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import HeaderComponent from './header/Component';
-import axios from 'axios';
-import BodyComponent from "./body/Component";
+import React, { Component } from 'react'
+import HeaderComponent from './header/Component'
+import axios from 'axios'
+import BodyComponent from "./body/Component"
 const locHost = 'http://localhost:5080'
 
 
@@ -31,10 +31,11 @@ class App extends Component {
             }
         }
         this.getCoords = this.getCoords.bind(this)
-        this.handleCoordsChange = this.handleCoordsChange.bind(this)
         this.getWeatherInfo = this.getWeatherInfo.bind(this)
-        this.searchWeather = this.searchWeather.bind(this)
+        this.handleCoordsChange = this.handleCoordsChange.bind(this)
         this.handleWeatherChange = this.handleWeatherChange.bind(this)
+        this.searchWeather = this.searchWeather.bind(this)
+    
     }
 
     handleCoordsChange(lat,lng, locationStr) {
@@ -47,7 +48,7 @@ class App extends Component {
                     locationStr
                 }
             } else {
-                return prevState;
+                return prevState
             }
         })
         document.getElementById('zipInput').value = ""
@@ -72,10 +73,10 @@ class App extends Component {
     }
 
     searchWeather(e, locationStr){
-        e.preventDefault();
+        e.preventDefault()
         this.getCoords(locationStr)
             .then(res => {
-                let coords = res.data.results[0].geometry.location;
+                let coords = res.data.results[0].geometry.location
                 this.handleCoordsChange(coords.lat, coords.lng, locationStr)
                 return this.getWeatherInfo(coords.lat, coords.lng)
             }).then (res => {
@@ -95,4 +96,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default App

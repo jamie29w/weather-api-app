@@ -1,25 +1,24 @@
-import React from "react";
+import React from "react"
 import Daily from "./Daily"
 
 function BodyComponent (props) {
     const styles = {
+        headers: {
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "5vh",
+            textAlign: "center",
+        },
         outerDiv: {
-            width: "100%",
+            backgroundColor: "#B4C6CE",
+            display: "flex",
+            flexDirection: "column",
             fontFamily: "platelet",
             fontSize: "2em",
             marginLeft: "auto",
             marginRight: "auto",
-            marginBottom: "5vh",
-            display: "flex",
-            flexDirection: "column",
             textAlign: 'center',
-            backgroundColor: "#E6F5F7",
-        },
-        headers: {
-            textAlign: "center",
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "5vh"
+            width: "100%",
         }
     }
     return (

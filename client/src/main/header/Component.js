@@ -1,37 +1,38 @@
-import React from 'react';
+import React from 'react'
 
 function HeaderComponent(props) {
 
     const styles = {
         background: {
-            backgroundColor: "#9FE3DD",
-            width: "100%",
-            height: "20vh",
-            display: "flex",
-            justifyContent: "space-around",
-            flexDirection: "column",
             alignContent: "center",
-        },
-        form: {
-            height: "20vh",
-            marginLeft: "auto",
-            marginRight: "auto",
+            backgroundColor: "#FEFDF8",
             display: "flex",
-            justifyContent: "space-around",
             flexDirection: "column",
-        },
-        input: {            
-            height: "30px",
-            width: "150px",
-            fontSize: "1em",
-            textAlign: "center"
+            height: "20vh",
+            justifyContent: "space-around",
+            width: "100%",
         },
         button: {
-            height: "30px",
-            width: "150px",
+            backgroundColor: "#FFEFBA",
+            boxShadow: "0 2px 5px lightgrey",
             fontSize: "1em",
-            backgroundColor: "#51BFB5"
+            height: "30px",
+            width: "150px"
         },
+        form: {
+            display: "flex",
+            flexDirection: "column",
+            height: "20vh",
+            justifyContent: "space-around",
+            marginLeft: "auto",
+            marginRight: "auto",
+        },
+        input: {            
+            fontSize: "1em",
+            height: "30px",
+            textAlign: "center",
+            width: "150px"
+        }
     }
 
     return (
@@ -44,4 +45,4 @@ function HeaderComponent(props) {
     )
 }
 
-export default HeaderComponent;
+export default HeaderComponent

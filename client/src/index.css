@@ -1,13 +1,14 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    color: #465353;
 }
 
 body {
-    background-color: #E6F5F7;
+    background-color: #FFEFBA;
 }
 
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #E6F5F7 inset;
+    -webkit-box-shadow: 0 0 0px 1000px #FFEFBA inset;
 }

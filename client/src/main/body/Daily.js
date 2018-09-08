@@ -7,19 +7,16 @@ function Daily (props) {
             flexDirection: "column",
             textAlign: "center",
         },
-        innerDivStyles: {
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-        },
         headers: {
             textAlign: "center",
             marginLeft: "auto",
             marginRight: "auto",
             marginTop: "2.5vh"
         },
-        spans: {
-            color: "#004843",
+        innerDivStyles: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
         }
     }
 
@@ -27,8 +24,6 @@ function Daily (props) {
     const day = date.getUTCDay()
     const week = ["SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT"]
     const dayOfWeek = week[day]
-
-
 
     return (
         <div style={styles.outerDivStyles}>
