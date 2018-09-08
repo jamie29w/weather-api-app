@@ -39,7 +39,7 @@ function HeaderComponent(props) {
         <div style={styles.background}>
             <form style={styles.form} onSubmit={(e) => props.searchWeather(e, document.getElementById('zipInput').value)}>
                 <input style={styles.input} id='zipInput' placeholder='Location'/>
-                <button type="submit" style={styles.button} >Your Weather</button>
+                <button type="submit" style={styles.button}>Your Weather</button>
             </form>
         </div>
     )
