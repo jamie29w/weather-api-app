@@ -1,6 +1,10 @@
 import React from "react"
 
-function Daily (props) {    
+
+function Daily (props) {
+        
+    
+    
     const styles = {
         outerDivStyles: {
             display: "flex",

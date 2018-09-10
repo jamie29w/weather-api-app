@@ -2,6 +2,7 @@ import React from "react"
 import Daily from "./Daily"
 
 function BodyComponent (props) {
+    
     const styles = {
         headers: {
             marginLeft: "auto",
