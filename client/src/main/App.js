@@ -76,6 +76,7 @@ class App extends Component {
         e.preventDefault()
         this.getCoords(locationStr)
             .then(res => {
+                console.log(res)
                 let coords = res.data.results[0].geometry.location
                 this.handleCoordsChange(coords.lat, coords.lng, locationStr)
                 return this.getWeatherInfo(coords.lat, coords.lng)
