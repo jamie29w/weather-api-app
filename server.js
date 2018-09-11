@@ -4,6 +4,7 @@ const axios = require('axios')
 const cors = require('cors')
 const morgan = require("morgan")
 const port = process.env.PORT || 5080
+const path = require("path")
 require('dotenv').config()
 
 
@@ -28,6 +29,10 @@ app.get('/api/weather/:lat,:lng', (req, res) => {
     .then(response => {
         res.send(response.data)
     })
+})
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 })
 
 app.listen(port, () => console.log(`Kreacher is watching on ${port}.`));
