@@ -11,6 +11,8 @@ require('dotenv').config()
 app.use(morgan("dev"));
 app.use(cors());
 
+
+app.use(express.static(path.join(__dirname, "client", "build")));
 // for debugging and deployment only
 app.get('/api/hello', (req, res) => {
     res.send("Hi from server");
