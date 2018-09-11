@@ -65,11 +65,11 @@ class App extends Component {
     } 
 
     getCoords(loc) {
-        return axios.get(`${locHost}/coords/${loc}`)
+        return axios.get(`${locHost}/api/coords/${loc}`)
     }
 
     getWeatherInfo(lat, lng) {
-        return axios.get(`${locHost}/weather/${lat},${lng}`)
+        return axios.get(`${locHost}/api/weather/${lat},${lng}`)
     }
 
     searchWeather(e, locationStr){
