@@ -10,10 +10,12 @@ require('dotenv').config()
 app.use(morgan("dev"));
 app.use(cors());
 
-app.get('/', (req, res) => {
+// for debugging and deployment only
+app.get('/hello', (req, res) => {
     res.send("Hi from server");
 })
 
+//actual query routes
 app.get('/coords/:loc', (req, res) => {
     axios.post(`https://maps.googleapis.com/maps/api/geocode/json?address=${req.params.loc}&key=${process.env.GOOGLE_API_KEY}`)
         .then(response => {
