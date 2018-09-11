@@ -1,9 +1,11 @@
-const express = require('express');
-const app = express();
-const axios = require('axios');
-const cors = require('cors');
-const morgan = require("morgan");
+const express = require('express')
+const app = express()
+const axios = require('axios')
+const cors = require('cors')
+const morgan = require("morgan")
+const port = process.env.PORT || 5080
 require('dotenv').config()
+
 
 app.use(morgan("dev"));
 app.use(cors());
@@ -26,4 +28,4 @@ app.get('/weather/:lat,:lng', (req, res) => {
     })
 })
 
-app.listen(5080, () => console.log('Kreacher is watching on port 5080.'));
+app.listen(port, () => console.log(`Kreacher is watching on ${port}.`));
