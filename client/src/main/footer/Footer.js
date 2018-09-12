@@ -15,8 +15,7 @@ const FooterComponent = () => {
             href="https://developers.google.com/places/web-service/intro"
                 rel="noopener noreferrer"
                 target="_blank"
-                > Google Places</a> & 
-                <a
+                > Google Places</a> & <a
                     href="https://darksky.net/dev"
                     rel="noopener noreferrer"
                     target="_blank"
