@@ -4,7 +4,6 @@ import axios from 'axios'
 import BodyComponent from "./body/Component"
 
 
-
 class App extends Component {
     constructor() {
         super()
