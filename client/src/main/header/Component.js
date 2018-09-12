@@ -8,7 +8,7 @@ function HeaderComponent(props) {
             backgroundColor: "#FEFDF8",
             display: "flex",
             flexDirection: "column",
-            height: "20vh",
+            minHeight: "20vh",
             justifyContent: "space-around",
             width: "100%",
         },

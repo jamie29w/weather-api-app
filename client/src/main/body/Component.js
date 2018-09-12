@@ -14,7 +14,7 @@ function BodyComponent (props) {
             backgroundColor: "#B4C6CE",
             display: "flex",
             flexDirection: "column",
-            fontFamily: "platelet",
+            fontFamily: "'Raleway', sans-serif",
             fontSize: "2em",
             marginLeft: "auto",
             marginRight: "auto",

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import HeaderComponent from './header/Component'
 import axios from 'axios'
 import BodyComponent from "./body/Component"
-// const locHost =  | 'http://localhost:5080'
+
 
 
 class App extends Component {
@@ -65,12 +65,10 @@ class App extends Component {
     } 
 
     getCoords(loc) {
-        // return axios.get(`${locHost}/api/coords/${loc}`)
         return axios.get(`/api/coords/${loc}`)
     }
 
     getWeatherInfo(lat, lng) {
-        // return axios.get(`${locHost}/api/weather/${lat},${lng}`)
         return axios.get(`/api/weather/${lat},${lng}`)
     }
 
