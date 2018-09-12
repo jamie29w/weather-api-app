@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import HeaderComponent from './header/Component'
 import axios from 'axios'
 import BodyComponent from "./body/Component"
+import FooterComponent from "./footer/Footer"
 
 
 class App extends Component {
@@ -91,6 +92,7 @@ class App extends Component {
             <div>
                 <HeaderComponent searchWeather = {this.searchWeather} />
                 <BodyComponent locationStr={this.state.locationStr} weather={this.state.weather} />
+                <FooterComponent />
             </div>
         )
     }
