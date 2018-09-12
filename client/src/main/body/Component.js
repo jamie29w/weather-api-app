@@ -9,7 +9,7 @@ function BodyComponent (props) {
             marginRight: "auto",
             marginTop: "5vh",
             textAlign: "center",
-            fontSize: '1em'
+            fontSize: '1.5em'
         },
         outerDiv: {
             backgroundColor: "#B4C6CE",
