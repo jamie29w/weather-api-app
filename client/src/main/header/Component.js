@@ -8,9 +8,11 @@ function HeaderComponent(props) {
             boxShadow: "0 2px 5px lightgrey",
             fontSize: "1em",
             minHeight: "30px",
-            width: "20%",
+            width: "25%",
             marginTop: '5vh',
-            marginBottom: '5vh'
+            marginBottom: '5vh',
+            paddingLeft: 10,
+            paddingRight: 10
         },
         form: {
             backgroundColor: "#FEFDF8",
