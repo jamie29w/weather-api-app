@@ -31,7 +31,6 @@ function BodyComponent (props) {
             paddingBottom: 10
         }
     }
-    
     return (
         <div style={styles.outerDiv}>
             <h1 style={styles.tempText}>{props.weather.currently.temperature === undefined ? "ENTER YOUR LOCATION ABOVE" : `CURRENT TEMPERATURE IN ${props.locationStr.toUpperCase()}`}</h1>
