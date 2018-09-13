@@ -11,8 +11,9 @@ require('dotenv').config()
 app.use(morgan("dev"));
 app.use(cors());
 
-
+//for deployment: routes to build directory
 app.use(express.static(path.join(__dirname, "client", "build")));
+
 // for debugging and deployment only
 app.get('/api/hello', (req, res) => {
     res.send("Hi from server");
@@ -33,6 +34,7 @@ app.get('/api/weather/:lat,:lng', (req, res) => {
     })
 })
 
+//for deployment: routes all "other" queries to index.html file in build folder
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 })

@@ -3,45 +3,42 @@ import React from 'react'
 function HeaderComponent(props) {
 
     const styles = {
-        background: {
-            alignContent: "center",
-            backgroundColor: "#FEFDF8",
-            display: "flex",
-            flexDirection: "column",
-            minHeight: "20vh",
-            justifyContent: "space-around",
-            width: "100%",
-        },
         button: {
             backgroundColor: "#FFEFBA",
             boxShadow: "0 2px 5px lightgrey",
             fontSize: "1em",
-            height: "30px",
-            width: "150px"
+            minHeight: "30px",
+            width: "20%",
+            marginTop: '5vh',
+            marginBottom: '5vh'
         },
         form: {
+            backgroundColor: "#FEFDF8",
+            width: "100%",
+            minHeight: "10vh",
             display: "flex",
-            flexDirection: "column",
-            height: "20vh",
+            flexDirection: "row",
             justifyContent: "space-around",
-            marginLeft: "auto",
-            marginRight: "auto",
         },
         input: {            
             fontSize: "1em",
-            height: "30px",
-            textAlign: "center",
-            width: "150px"
+            minHeight: "30px",
+            textAlign: "left",
+            minWidth: 150,
+            width: "60%",
+            outline: "none",
+            marginTop: '5vh',
+            marginBottom: '5vh',
+            paddingLeft: 10,
+            paddingRight: 10
         }
     }
 
     return (
-        <div style={styles.background}>
-            <form style={styles.form} onSubmit={(e) => props.searchWeather(e, document.getElementById('zipInput').value)}>
-                <input style={styles.input} id='zipInput' placeholder='Location'/>
-                <button type="submit" style={styles.button}>Your Weather</button>
-            </form>
-        </div>
+        <form style={styles.form} onSubmit={(e) => props.searchWeather(e, document.getElementById('zipInput').value)}>
+            <input style={styles.input} id='zipInput' placeholder='Location'/>
+            <button type="submit" style={styles.button}>Check the Weather</button>
+        </form>
     )
 }
 
