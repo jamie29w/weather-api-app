@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HeaderComponent(props) {
+const HeaderComponent = (props) => {
 
     const styles = {
         button: {

@@ -1,32 +1,15 @@
 import React from "react"
 
 
-function Daily (props) {
+const Daily = props => {
 
     const styles = {
-        outerDivStyles: {
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-        },
         days: {
             textAlign: "center",
             marginLeft: "auto",
             marginRight: "auto",
             marginTop: "2.5vh",
             fontSize: "1em"
-        },
-        innerDivStyles: {
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-        },
-        tempText: {
-            fontSize: '1em',
-            textAlign: "center",
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: "2.5vh"
         },
         hiLoText: {
             fontSize: '.6em',
@@ -35,8 +18,25 @@ function Daily (props) {
             marginRight: "auto",
             marginTop: "2.5vh"
         },
+        innerDivStyles: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+        },
+        outerDivStyles: {
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+        },
         summaryText: {
             fontSize: '.6em',
+            textAlign: "center",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "2.5vh"
+        },
+        tempText: {
+            fontSize: '1em',
             textAlign: "center",
             marginLeft: "auto",
             marginRight: "auto",
@@ -52,7 +52,6 @@ function Daily (props) {
     return (
         <div style={styles.outerDivStyles}>
             <hr/>
-            
             <h2 style={styles.days}>{dayOfWeek}</h2>
             <div style={styles.innerDivStyles}>
                 <h3 style={styles.tempText}><span style={styles.hiLoText}>HI:</span> {Math.round(props.day.temperatureHigh)}˚</h3>

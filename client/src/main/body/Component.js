@@ -1,8 +1,15 @@
 import React from "react"
 import Daily from "./Daily"
 
-function BodyComponent (props) {
+const BodyComponent = props => {
     const styles = {
+        headerText: {
+            fontSize: '.6em',
+            textAlign: "center",
+            marginLeft: "auto",
+            marginRight: "auto",
+            padding: 10
+        },
         inactive: {
             display: "none"
         },
@@ -17,25 +24,21 @@ function BodyComponent (props) {
             textAlign: 'center',
             width: "100%",
             minHeight: "10vh",
-            paddingLeft: 20,
-            paddingRight: 20,
-            paddingTop: 20,
-            paddingBottom: 20
+            padding: 20
         },
         tempText: {
-            fontSize: '.8em',
+            fontSize: '1em',
             textAlign: "center",
             marginLeft: "auto",
             marginRight: "auto",
-            paddingTop: 10,
-            paddingBottom: 10
+            padding: 10
         }
     }
     return (
         <div style={styles.outerDiv}>
-            <h1 style={styles.tempText}>{props.weather.currently.temperature === undefined ? "ENTER YOUR LOCATION ABOVE" : `CURRENT TEMPERATURE IN ${props.locationStr.toUpperCase()}`}</h1>
+            <h1 style={styles.headerText}>{props.weather.currently.temperature === undefined ? "ENTER YOUR LOCATION ABOVE" : `CURRENT TEMPERATURE IN ${props.locationCity.toUpperCase()}, ${props.locationState.toUpperCase()}`}</h1>
             <h3 style={props.weather.currently.temperature === undefined ? styles.inactive : styles.tempText}>{props.weather.currently.temperature === undefined ? "" : `${Math.round(props.weather.currently.temperature)}˚`}</h3>
-            <h1 style={props.weather.currently.temperature === undefined ? styles.inactive : styles.tempText}> {props.weather.currently.temperature === undefined ? "" : "WEEKLY FORECAST:"}</h1>
+            <h1 style={props.weather.currently.temperature === undefined ? styles.inactive : styles.headerText}> {props.weather.currently.temperature === undefined ? "" : "WEEKLY FORECAST:"}</h1>
             <br style={props.weather.currently.temperature === undefined ? styles.inactive : {display: "block"}}/>
             {props.weather.currently.temperature === undefined ? "" : props.weather.daily.data.map((day, i) => <Daily key={i} day={props.weather.daily.data[i]} />)}
         </div>
