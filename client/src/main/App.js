@@ -3,6 +3,7 @@ import HeaderComponent from './header/Component'
 import axios from 'axios'
 import BodyComponent from "./body/Component"
 import FooterComponent from "./footer/Footer"
+import ErrBodyComponent from './body/ErrBodyComponent'
 
 const strNumArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
@@ -13,6 +14,7 @@ class App extends Component {
         this.state = {
             lat: null,
             lng: null,
+            locationError: false,
             date: "",
             locationStr: "",
             locationCity: "",
@@ -51,10 +53,9 @@ class App extends Component {
                     lng,
                     locationStr,
                     locationCity,
-                    locationState
+                    locationState,
+                    locationError: false
                 }
-            } else {
-                return prevState
             }
         })
         document.getElementById('zipInput').value = ""
@@ -82,7 +83,6 @@ class App extends Component {
         e.preventDefault()
         this.getCoords(locationStr)
             .then(res => {
-                console.log(res)
                 let coords = res.data.results[0].geometry.location,
                     locationComponents = res.data.results[0].address_components,
                     locationCity
@@ -98,15 +98,24 @@ class App extends Component {
                 this.handleWeatherChange(res.data)
             }).catch(err => {
                 console.error(err)
+                this.setState(prevState => {
+                    return ({
+                        ...prevState,
+                        locationError: true
+                    })
+                })
             })
     }
 
     render() {
-        console.log(this.state)
+        let Body
+        this.state.locationError ? Body = <ErrBodyComponent /> : Body = <BodyComponent locationCity={this.state.locationCity} locationState={this.state.locationState} locationStr={this.state.locationStr} weather={this.state.weather} />
+        console.log(Body)
         return(
             <div>
                 <HeaderComponent searchWeather = {this.searchWeather} />
-                <BodyComponent locationCity={this.state.locationCity} locationState={this.state.locationState} locationStr={this.state.locationStr} weather={this.state.weather} />
+                {/* <BodyComponent locationCity={this.state.locationCity} locationState={this.state.locationState} locationStr={this.state.locationStr} weather={this.state.weather} /> */}
+                {Body}
                 <FooterComponent />
             </div>
         )
