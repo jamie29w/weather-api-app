@@ -11,8 +11,7 @@ function HeaderComponent(props) {
             width: "25%",
             marginTop: '5vh',
             marginBottom: '5vh',
-            paddingLeft: 10,
-            paddingRight: 10
+            padding: 10
         },
         form: {
             backgroundColor: "#FEFDF8",
@@ -31,8 +30,7 @@ function HeaderComponent(props) {
             outline: "none",
             marginTop: '5vh',
             marginBottom: '5vh',
-            paddingLeft: 10,
-            paddingRight: 10
+            padding: 10
         }
     }
 
