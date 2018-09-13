@@ -24,7 +24,6 @@ const ErrBodyComponent = () => {
             padding: 20
         }
     }
-    
 
     return (
         <div style={styles.outerDiv}>

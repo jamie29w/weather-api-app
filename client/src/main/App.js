@@ -110,11 +110,9 @@ class App extends Component {
     render() {
         let Body
         this.state.locationError ? Body = <ErrBodyComponent /> : Body = <BodyComponent locationCity={this.state.locationCity} locationState={this.state.locationState} locationStr={this.state.locationStr} weather={this.state.weather} />
-        console.log(Body)
         return(
             <div>
                 <HeaderComponent searchWeather = {this.searchWeather} />
-                {/* <BodyComponent locationCity={this.state.locationCity} locationState={this.state.locationState} locationStr={this.state.locationStr} weather={this.state.weather} /> */}
                 {Body}
                 <FooterComponent />
             </div>
